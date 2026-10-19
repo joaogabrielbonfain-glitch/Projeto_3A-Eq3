@@ -3,16 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Livraria - Sua Biblioteca Online</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1></h1>
+
+  <!--NAVEGAÇÃO-->
+  <header>
+    <div class="header-container">
+      <h1>Livraria 3B - Sua Biblioteca Online</h1>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="navegarPara('pagina1')">Início</a></li>
+          <li><a href="#" onclick="navegarPara('pagina2')">Livros</a></li>
+          <li><a href="#" onclick="navegarPara('pagina3')">Generos</a></li>
+          <li><a href="#" onclick="navegarPara('pagina4')">Entrar / Cadastrar</a></li>
+          <li><a href="#" onclick="navegarPara('pagina5')">Troca de Livros</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-container">
+
+    <!-- PÁGINA 1-->
+    <section id="pagina1" class="pagina active">
+      <div class="hero">
+        <h2>Encontre Sua nova Historia</h2>
+        <p>Milhares de livros Esperando para serem lidos.</p>
+        <button class="btn btn-primary" onclick="navegarPara('pagina2')">Ver Livros</button>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.njmY1T-RC5s6QCx1h2F55wHaKp?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+          <div class="card-content">
+            <h3>Duna-Livro 1</h3>
+            <p>Uma estonteante mistura de aventura e misticismo, ecologia e política, este romance ganhador dos prêmios Hugo e Nebula deu início a uma das mais épicas histórias de toda a ficção científica. Duna é um triunfo da imaginação, que influenciará a literatura para sempre.Esta edição inédita, com introdução de Neil Gaiman, apresenta ao leitor o universo fantástico criado por Herbert e que será adaptado ao cinema por Denis Villeneuve, diretor de A chegada e de Blade Runner 2049. </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="data:image/webp;base64,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">
+          <div class="card-content">
+            <h3>Manual de Persuasão do FBI</h3>
+            <p>Você quer pensar e reagir como os investigadores de TV do Criminal Minds, CSI ou Lie to Me? Quer influenciar pessoas recém-conhecidas e planejar a imagem pessoal que transmitirá no dia a dia? Quer entender através da linguagem corporal o que passa pela cabeça das pessoas ao seu redor? Quer descobrir se alguém está mentindo?
+Caso tenha respondido sim para alguma dessas perguntas, este é o livro perfeito para você..</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--PÁGINA 2-->
+    <section id="pagina2" class="pagina">
+      <h2>Livros Disponiveis</h2>
+      <p class="section-desc">Clique para ver e comprar o livro.</p>
+
+      <div class="cards-grid" id="lista-animais">
+        
+      </div>
+    </section>
+
+    <!--PÁGINA 3-->
+    <section id="pagina3" class="pagina">
+      <h2>Generos disponiveis</h2>
+      <div id="detalhes-container" class="detalhes-card">
+        <p>Selecione um livro na página de <a href="#" onclick="navegarPara('pagina2')">Livros</a> para visualizar as informações completas.</p>
+      </div>
+    </section>
+
+    <!--PÁGINA 4 LOGIN-->
+    <section id="pagina4" class="pagina">
+      <div class="auth-container">
+        <h2>Acesse sua Conta</h2>
+        <form id="form-login" onsubmit="realizarLogin(event)">
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" class="form-control" placeholder="seuemail@exemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" class="form-control" placeholder="Sua senha" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+        <div id="mensagem-login" class="mensagem-alerta"></div>
+      </div>
+    </section>
+
+    <!--PÁGINA 5-->
+    <section id="pagina5" class="pagina">
+      <h2>Trocar livro</h2>
+      <p class="section-desc">Preencha estas informações para solicitar a troca de livro.</p>
+
+      <form id="form-adocao" onsubmit="enviarAdocao(event)" class="form-adocao">
+        <div class="form-group">
+          <label for="nome-adotante">Nome Do Livro para troca:</label>
+          <input type="text" id="nome-adotante" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="idade-adotante">livro desejado:</label>
+          <input type="text" id="desejado" class="form-control" placeholder="Mínimo 18 anos" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pet-selecionado">Livro Desejado:</label>
+          <select id="pet-selecionado" class="form-control" required>
+            <option value="">Selecione um livro...</option>
+            <option value="Duna">Duna</option>
+            <option value="Manual de Persuasão do FBI">Manual de Persuasão do FBI</option>
+            <option value="O Senhor dos Anéis">O Senhor dos Anéis</option>
+          </select>
+        </div>
 
 
+        <fieldset class="regras-box">
+          <legend>Termos e Regras de Negócio para Troca de Livros</legend>
 
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-quintal" required>
+            Livro apresenta capa, traseira e latereis em bom estado, sem rasgos ou marcas de uso excessivo.
+          </label>
 
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-financeiro" required>
+            Dependendo do livro deve ter mais de 18 anos
+          </label>
 
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-fotos" required>
+            O livro deve estar completo, sem páginas faltando ou rasgadas.
+          </label>
+        </fieldset>
 
+        <button type="submit" class="btn btn-success btn-block">Enviar Pedido de Troca</button>
+      </form>
 
+      <div id="mensagem-adocao" class="mensagem-alerta"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Livraria- Leitura é saber.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+</html>
